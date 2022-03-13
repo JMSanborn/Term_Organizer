@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Term Organizer</string>
+    <string name="Title">Term Organizer</string>
+    <string name="enter">Enter</string>
+    <string name="textview">TextView</string>
+    <string name="Name">Name</string>
+    <string name="term_name">termName</string>
+</resources>
