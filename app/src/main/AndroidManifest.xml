@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TermOrganizer">
         <activity
+            android:name=".UI.AssessmentDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.AssessmentList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.CourseDetail"
+            android:exported="false" />
+        <activity
             android:name=".UI.TermDetail"
             android:exported="false" />
         <activity
@@ -19,7 +28,7 @@
             android:name=".UI.TermList"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

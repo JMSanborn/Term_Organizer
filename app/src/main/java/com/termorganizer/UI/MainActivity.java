@@ -1,4 +1,4 @@
-package com.termorganizer;
+package com.termorganizer.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.termorganizer.Database.Repository;
 import com.termorganizer.Entity.Term;
-import com.termorganizer.UI.TermList;
+import com.termorganizer.R;
 
 public class MainActivity extends AppCompatActivity {
     //public static int numAlert;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(MainActivity.this, TermList.class);
         startActivity(intent);
         Repository repo=new Repository(getApplication());
-       //Term term=new Term(,"");
-        //repo.insert(term);
+        Term term=new Term(1,"Demo Term", "0/00/00", "0/00/00");
+        repo.insert(term);
     }
 }
