@@ -6,6 +6,8 @@
     <string name="Name">Name</string>
     <string name="term_name">termName</string>
     <string name="terms_title">LIST OF CURRENT TERMS:</string>
-
     <string name="termStart">Start</string>
+    <string name="delete">Delete</string>
+    <string name="course_title">LIST OF CURRENT COURSES</string>
+    <string name="courses">Courses</string>
 </resources>

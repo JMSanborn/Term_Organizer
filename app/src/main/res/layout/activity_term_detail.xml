@@ -58,13 +58,26 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="150dp"
         android:clickable="true"
         android:onClick="saveButton"
         android:text="Save"
-        app:layout_constraintTop_toBottomOf="@+id/editEndDate"
-        tools:layout_editor_absoluteX="147dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEndDate" />
+
+    <Button
+        android:id="@+id/buttonTermDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="75dp"
+        android:text="@string/delete"
+        android:onClick="deleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEndDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,7 @@ import com.termorganizer.Entity.Course;
 import com.termorganizer.Entity.Term;
 import com.termorganizer.Utilities.DateConverter;
 @TypeConverters(DateConverter.class)
-@Database(entities={Term.class, Course.class}, version=4, exportSchema = false)
+@Database(entities={Term.class, Course.class}, version=5, exportSchema = false)
 public abstract class TermDatabase extends RoomDatabase {
     public abstract TermDAO termDAO();
     public abstract CourseDAO courseDAO();
