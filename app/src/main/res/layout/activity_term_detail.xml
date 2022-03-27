@@ -7,77 +7,123 @@
     android:layout_height="match_parent"
     tools:context=".UI.TermDetail">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="55dp"
+        tools:layout_editor_absoluteX="-1dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="55dp"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="1dp" />
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/term_name" />
+            <EditText
+                android:id="@+id/editTermName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter term title here"
+                android:textSize="24sp"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTermName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Name" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="55dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="1dp" />
 
-        <EditText
-            android:id="@+id/editStartDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/termStart" />
+            <EditText
+                android:id="@+id/editStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:inputType="date"
+                tools:layout_editor_absoluteX="0dp"
+                android:hint="@string/start_date"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+            <EditText
+                android:id="@+id/editEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/end_date"
+                tools:layout_editor_absoluteX="0dp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="Assigned Courses:"
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCoursesPerTerm"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_200"
+                app:layout_constraintTop_toBottomOf="@+id/editEndDate" />
 
-    <EditText
-        android:id="@+id/editEndDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="16dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="150dp"
-        android:clickable="true"
-        android:onClick="saveButton"
-        android:text="Save"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEndDate" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    android:onClick="saveButton"
+                    android:text="Save"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewCoursesPerTerm" />
 
-    <Button
-        android:id="@+id/buttonTermDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="75dp"
-        android:text="@string/delete"
-        android:onClick="deleteButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEndDate" />
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Please ensure that you save a new term before adding courses" />
 
+                <Button
+                    android:id="@+id/buttonTermDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="deleteButton"
+                    android:text="@string/delete"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewCoursesPerTerm" />
+
+                <Button
+                    android:id="@+id/buttonAddCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/add_course"
+                    android:onClick="addCourse"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonTermDelete"
+                    app:layout_constraintStart_toEndOf="@+id/button2"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewCoursesPerTerm" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

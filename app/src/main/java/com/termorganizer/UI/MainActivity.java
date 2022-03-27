@@ -25,16 +25,11 @@ public class MainActivity extends AppCompatActivity {
     public void enterHere(View view) {
         Intent intent=new Intent(MainActivity.this, TermList.class);
         startActivity(intent);
-        Repository repo=new Repository(getApplication());
-        Term term=new Term(1,"Demo Term", "0/00/00", "0/00/00");
-        repo.insert(term);
+        Repository repository=new Repository(getApplication());
+        Term term=new Term(1,"demo term", "0/00/00", "0/00/00");
+        Course course =new Course(1,"demo course", "0/00/00", "0/00/00",1, "demo term", "Plan to take", "Snoopy", "876-5309", "snoopydog1@gmail.com");
+        repository.insert(term);
+        repository.insert(course);
     }
 
-    public void enterCourses(View view) {
-        Intent intent=new Intent(MainActivity.this, CourseList.class);
-        startActivity(intent);
-        Repository repo=new Repository(getApplication());
-        Course course =new Course(1,"Math");
-        repo.insert(course);
-    }
 }

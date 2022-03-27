@@ -32,7 +32,15 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                     final Course current = mCourses.get(position);
                     Intent intent = new Intent(context, CourseDetail.class);
                     intent.putExtra("id", current.getCourseID());
-                    intent.putExtra("courseTitle", current.getCourseTitle());
+                    intent.putExtra("title", current.getCourseTitle());
+                    intent.putExtra("startDate", current.getStartDate());
+                    intent.putExtra("endDate", current.getEndDate());
+                    intent.putExtra("termID", current.getTermID());
+                    intent.putExtra("termName", current.getTermName());
+                    intent.putExtra("courseStatus", current.getCourseStatus());
+                    intent.putExtra("courseInstName", current.getCourseInstName());
+                    intent.putExtra("courseInstPhone", current.getCourseInstPhone());
+                    intent.putExtra("courseInstEmail", current.getCourseInstEmail());
                     context.startActivity(intent);
                 }
             });
@@ -58,14 +66,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             String courseTitle = current.getCourseTitle();
             holder.courseItemView.setText(courseTitle);
         } else {
-            holder.courseItemView.setText("No product name");
+            holder.courseItemView.setText(R.string.courseItemView);
         }
 
     }
-    public void setCourses (List< Course > courses) {
+
+    public void setCourses(List<Course> courses) {
         mCourses = courses;
-        notifyDataSetChanged();
+
     }
+
     @Override
     public int getItemCount () {
         if (mCourses != null) {

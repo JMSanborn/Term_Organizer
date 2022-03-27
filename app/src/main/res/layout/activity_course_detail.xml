@@ -6,4 +6,150 @@
     android:layout_height="match_parent"
     tools:context=".UI.CourseDetail">
 
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="55dp"
+        tools:layout_editor_absoluteX="-1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+            <EditText
+                android:id="@+id/editCourseTitle"
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/course_title"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/instructorsName"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:text="@string/instructors_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editCourseTitle" />
+
+            <EditText
+                android:id="@+id/editInstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_instructors_name_here" />
+
+                <TextView
+                        android:id="@+id/instructorsPhone"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:text="@string/instructors_phone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="80dp" />
+
+            <EditText
+                android:id="@+id/editInstPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_instructors_phone_number_here" />
+
+                <TextView
+                        android:id="@+id/instructorsEmail"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:text="@string/instructors_email"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="115dp" />
+
+            <EditText
+                android:id="@+id/editInstEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_instructors_email_here" />
+
+            <TextView
+                android:id="@+id/courseTerm"
+                android:layout_width="195dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:hint="@string/TermTitle"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.537"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructorsEmail" />
+
+                <EditText
+                    android:id="@+id/editCourseStartDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:ems="10"
+                    android:inputType="date"
+                    app:layout_constraintTop_toBottomOf="@+id/courseTerm"
+                    tools:layout_editor_absoluteX="0dp"
+                    android:hint="@string/start_date"/>
+
+                <EditText
+                        android:id="@+id/editCourseEndDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:ems="10"
+                        android:inputType="date"
+                        app:layout_constraintTop_toBottomOf="@+id/editCourseStartDate"
+                        tools:layout_editor_absoluteX="2dp"
+                        android:hint="@string/end_date"/>
+
+            <Spinner
+                android:id="@+id/courseSpinner"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editCourseEndDate" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/courseSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:onClick="courseSave"
+                    android:text="@string/save" />
+
+                <Button
+                    android:id="@+id/courseDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="courseDelete"
+                    android:text="@string/delete" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

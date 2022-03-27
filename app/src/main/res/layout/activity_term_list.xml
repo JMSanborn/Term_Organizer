@@ -7,35 +7,64 @@
     android:layout_height="match_parent"
     tools:context=".UI.TermList">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:clickable="true"
-        android:onClick="goToTermDetail"
-        android:src="@android:drawable/ic_input_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="55dp"
+        tools:layout_editor_absoluteX="-1dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="355dp"
-        android:layout_height="555dp"
-        android:layout_margin="5dp"
-        android:background="@color/teal_200"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/termTableLabel" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/termTableLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/terms_title"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/recyclerview"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/termTableLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/terms_title"
+                android:textAlignment="center"
+                android:textSize="34sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:background="@color/teal_200"
+                app:layout_constraintTop_toBottomOf="@+id/termTableLabel" />
+
+            <Button
+                android:id="@+id/addTerm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="goToTermDetail"
+                android:text="@string/add_new_term"/>
+
+            <Button
+                android:id="@+id/viewCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_course_list" />
+
+            <Button
+                android:id="@+id/viewAssesment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_assessment_list" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
