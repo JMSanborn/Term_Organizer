@@ -4,6 +4,8 @@ package com.termorganizer.Entity;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.termorganizer.Utilities.CourseStatusEnum;
+
 @Entity(tableName = "Courses")
 public class Course {
     @PrimaryKey(autoGenerate = true)
@@ -11,11 +13,11 @@ public class Course {
     private String courseTitle;
     private String startDate;
     private String endDate;
-    private String courseStatus;
+    private CourseStatusEnum courseStatus;
     private String courseInstName;
     private String courseInstPhone;
     private String courseInstEmail;
-    //private String courseNotes;
+    private String courseNotes;
     private int termID;
     private String termName;
 
@@ -34,7 +36,7 @@ public class Course {
                 ", courseInstructorEmail='" + courseInstEmail + '\'' +
                 '}';
     }
-    public Course(int courseID, String courseTitle, String startDate, String endDate,int termID, String termName, String courseStatus, String courseInstName, String courseInstPhone, String courseInstEmail) {//} String courseNotes, {
+    public Course(int courseID, String courseTitle, String startDate, String endDate, int termID, String termName, CourseStatusEnum courseStatus, String courseInstName, String courseInstPhone, String courseInstEmail, String courseNotes) {
         this.courseID = courseID;
         this.courseTitle = courseTitle;
         this.startDate = startDate;
@@ -43,7 +45,7 @@ public class Course {
         this.courseInstName = courseInstName;
         this.courseInstPhone = courseInstPhone;
         this.courseInstEmail = courseInstEmail;
-        //this.courseNotes = courseNotes;
+        this.courseNotes = courseNotes;
         this.termID = termID;
         this.termName = termName;
     }
@@ -64,9 +66,9 @@ public class Course {
 
     public void setEndDate(String endDate) { this.endDate = endDate; }
 
-    public String getCourseStatus() { return courseStatus; }
+    public CourseStatusEnum getCourseStatus() { return courseStatus; }
 
-   public void setCourseStatus(String courseStatus) { this.courseStatus = courseStatus; }
+   public void setCourseStatus(CourseStatusEnum courseStatus) { this.courseStatus = courseStatus; }
 
     public String getCourseInstName() { return courseInstName; }
 
@@ -80,9 +82,9 @@ public class Course {
 
     public void setCourseInstEmail(String courseInstEmail) { this.courseInstEmail = courseInstEmail; }
 
-    //public String getCourseNotes() { return courseNotes; }
+    public String getCourseNotes() { return courseNotes; }
 
-    //public void setCourseNotes(String courseNotes) { this.courseNotes = courseNotes; }
+    public void setCourseNotes(String courseNotes) { this.courseNotes = courseNotes; }
 
     public int getTermID() { return termID; }
 
@@ -91,4 +93,5 @@ public class Course {
     public String getTermName() { return termName;}
 
     public void setTermName(String termName) { this.termName = termName; }
+
 }

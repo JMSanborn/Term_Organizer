@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
@@ -40,6 +41,8 @@ public class TermDetail extends AppCompatActivity {
     int termID;
     Repository repository;
     Term currentTerm;
+    int numCourses;
+    Course filteredCourses;
     DatePickerDialog.OnDateSetListener startDate;
     DatePickerDialog.OnDateSetListener endDate;
     final Calendar myCalendarStart = Calendar.getInstance();
@@ -74,7 +77,8 @@ public class TermDetail extends AppCompatActivity {
             if(course.getTermID() == termID) filteredCourses.add(course);
         }
                 adapter.setCourses(filteredCourses);
-        
+                numCourses = filteredCourses.size();
+
         startDate = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -183,16 +187,22 @@ public class TermDetail extends AppCompatActivity {
         Intent intent = new Intent(TermDetail.this, TermList.class);
         startActivity(intent);
     }
-    public void deleteButton(View view){
-        for(Term term : repository.getAllTerms()) {
+
+    public boolean deleteButton(View view) {
+        for (Term term : repository.getAllTerms()) {
             if (term.getTermID() == termID) currentTerm = term;
         }
-            repository.delete(currentTerm);
-            Toast.makeText(TermDetail.this, currentTerm.getTermName() + " was deleted. Please refresh page.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(TermDetail.this, TermList.class);
-        startActivity(intent);
+            if (numCourses == 0) {
+                repository.delete(currentTerm);
+                Toast.makeText(TermDetail.this, currentTerm.getTermName() + " was deleted.", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(TermDetail.this, TermList.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(TermDetail.this, currentTerm.getTermName() + " " + "cannot be removed. Please remove all courses before attempting to removing Term.", Toast.LENGTH_LONG).show();
+            }
+            return true;
+        }
 
-    }
     public void addCourse(View view){
         EditText editName =(EditText) findViewById(R.id.editTermName);
         String termName = editName.getText().toString();

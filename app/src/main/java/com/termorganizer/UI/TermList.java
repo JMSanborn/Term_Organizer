@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.termorganizer.Database.Repository;
+import com.termorganizer.Entity.Assessment;
+import com.termorganizer.Entity.Course;
 import com.termorganizer.Entity.Term;
 import com.termorganizer.R;
 
@@ -42,6 +44,14 @@ public class TermList extends AppCompatActivity {
 }
     public void goToTermDetail(View view) {
         Intent intent=new Intent(TermList.this,TermDetail.class);
+        startActivity(intent);
+    }
+    public void goToCourseList(View view) {
+        Intent intent = new Intent(TermList.this, CourseList.class);
+        startActivity(intent);
+    }
+    public void goToAssessmentList(View view) {
+        Intent intent=new Intent(TermList.this, AssessmentList.class);
         startActivity(intent);
     }
 }

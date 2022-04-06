@@ -6,4 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".UI.AssessmentDetail">
 
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/editAssessmentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter assessment title here"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/viewCourseTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="course goes here" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:text="Type of Assessment:"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/assessmentSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp" />
+
+            <EditText
+                android:id="@+id/editAssessmentStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="date"
+                tools:layout_editor_absoluteX="0dp"
+                android:hint="@string/Assessment_date"/>
+
+            <EditText
+                android:id="@+id/editAssessmentEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="date"
+                tools:layout_editor_absoluteX="0dp"
+                android:hint="@string/tap_to_select_assessment_end"/>
+
+
+            <Button
+                android:id="@+id/assessmentSave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:onClick="assessmentSave"
+                android:text="@string/save_assessment" />
+
+            <Button
+                android:id="@+id/assessmentDelete"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="assessmentDelete"
+                android:text="@string/delete_assessment" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

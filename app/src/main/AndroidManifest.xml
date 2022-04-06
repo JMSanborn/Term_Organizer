@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TermOrganizer">
+        <receiver
+            android:name=".UI.MyReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
         <activity
             android:name=".UI.AssessmentDetail"
             android:exported="false" />

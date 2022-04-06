@@ -1,11 +1,7 @@
 package com.termorganizer.Entity;
 
-import android.os.Bundle;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import java.util.Date;
 
 @Entity(tableName = "Terms")
 public class Term {

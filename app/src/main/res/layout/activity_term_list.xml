@@ -57,12 +57,14 @@
                 android:id="@+id/viewCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="goToCourseList"
                 android:text="@string/view_course_list" />
 
             <Button
-                android:id="@+id/viewAssesment"
+                android:id="@+id/viewAssessment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="goToAssessmentList"
                 android:text="@string/view_assessment_list" />
 
         </LinearLayout>

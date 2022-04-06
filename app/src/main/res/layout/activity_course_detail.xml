@@ -79,15 +79,24 @@
                 android:text="@string/enter_instructors_email_here" />
 
             <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/assigned_term"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
                 android:id="@+id/courseTerm"
                 android:layout_width="195dp"
                 android:layout_height="34dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:hint="@string/TermTitle"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.537"
                 app:layout_constraintStart_toStartOf="parent"
@@ -115,15 +124,48 @@
                         tools:layout_editor_absoluteX="2dp"
                         android:hint="@string/end_date"/>
 
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Course Status:" />
+
             <Spinner
                 android:id="@+id/courseSpinner"
                 android:layout_width="409dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editCourseEndDate" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Assigned Assessments:" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAssessmentsPerCourse"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/teal_200" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Course Notes:" />
+
+            <EditText
+                android:id="@+id/editCourseNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Notes Here" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -139,6 +181,12 @@
                     android:onClick="courseSave"
                     android:text="@string/save" />
 
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Please ensure that you save a new course before adding assessments" />
+
                 <Button
                     android:id="@+id/courseDelete"
                     android:layout_width="match_parent"
@@ -147,6 +195,15 @@
                     android:layout_marginTop="10dp"
                     android:onClick="courseDelete"
                     android:text="@string/delete" />
+
+                <Button
+                    android:id="@+id/addAssessment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="addAssessment"
+                    android:text="@string/add_assessment" />
 
             </LinearLayout>
 

@@ -28,4 +28,17 @@
     <string name="add_new_term">Add New Term</string>
     <string name="view_course_list">View Course List</string>
     <string name="view_assessment_list">View Assessment List</string>
+    <string name="return_to_terms">Return to Terms</string>
+    <string name="list_of_assessments">List of Assessments</string>
+    <string name="Assessment_date">Tap to select Assessment Start</string>
+    <string name="save_assessment">Save Assessment</string>
+    <string name="delete_assessment">Delete Assessment</string>
+    <string name="add_assessment">Add Assessment</string>
+    <string name="assigned_term">Assigned Term:</string>
+    <string name="channel_name">myChannelName</string>
+    <string name="channel_description">myChannelDescription</string>
+    <string name="tap_to_select_assessment_end">Tap to Select Assessment End</string>
+    <string name="notify_assessment_start">Notify Assessment Start</string>
+    <string name="notify_assessment_end">Notify Assessment End</string>
+    <string name="list_of_courses">List of Courses:</string>
 </resources>

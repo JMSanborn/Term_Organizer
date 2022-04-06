@@ -32,7 +32,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                     final Course current = mCourses.get(position);
                     Intent intent = new Intent(context, CourseDetail.class);
                     intent.putExtra("id", current.getCourseID());
-                    intent.putExtra("title", current.getCourseTitle());
+                    intent.putExtra("courseTitle", current.getCourseTitle());
                     intent.putExtra("startDate", current.getStartDate());
                     intent.putExtra("endDate", current.getEndDate());
                     intent.putExtra("termID", current.getTermID());
@@ -41,6 +41,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                     intent.putExtra("courseInstName", current.getCourseInstName());
                     intent.putExtra("courseInstPhone", current.getCourseInstPhone());
                     intent.putExtra("courseInstEmail", current.getCourseInstEmail());
+                    intent.putExtra("courseNotes", current.getCourseNotes());
                     context.startActivity(intent);
                 }
             });
